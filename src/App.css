@@ -1,0 +1,11 @@
+body {
+    background-color: var(--colors-neutral-900);
+    font-family: var(--DM-Sans-family);
+    font-family: var(--Bricolage-Grotesque-family);
+}
+
+.main-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: var(--spacing-600) var(--spacing-1400) var(--spacing-1000);
+}

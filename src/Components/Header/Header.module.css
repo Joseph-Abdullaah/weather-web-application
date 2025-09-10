@@ -1,0 +1,19 @@
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.units {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-125);
+    padding: var(--spacing-150) var(--spacing-200);
+    background-color: var(--colors-neutral-800);
+    color: var(--colors-neutral-0);
+    border-radius: var(--corner-radius-8);
+}
+
+.unit-icon, .dropdown-icon {
+    width: var(--spacing-200);
+    height: var(--spacing-200);
+}
