@@ -1,6 +1,7 @@
 .headerContainer {
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .units {
@@ -13,7 +14,69 @@
     border-radius: var(--corner-radius-8);
 }
 
-.unit-icon, .dropdown-icon {
+.unitIcon, .dropdownIcon {
     width: var(--spacing-200);
     height: var(--spacing-200);
+}
+
+
+.dropdownMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: var(--spacing-050);
+    padding: var(--spacing-100) var(--spacing-075);
+    border-radius: var(--corner-radius-12);
+    position: absolute;
+    max-width: 214px;
+    width: 100%;
+    background-color: var(--colors-neutral-800);
+    top: calc(2px + var(--spacing-600));
+    right: 0;
+    z-index: 2;
+}
+
+.switchButton {
+    color: var(--colors-neutral-0);
+    padding: var(--spacing-100) var(--spacing-125);
+    width: 100%;
+    text-align: left;
+}
+
+.switchButton:hover, .switchButton:active {
+    background-color: var(--colors-neutral-700);
+    border-radius: var(--corner-radius-8);
+}
+
+p {
+    color: var(--colors-neutral-300);
+    padding: var(--spacing-075) var(--spacing-100) var(--spacing-0) var(--spacing-100);
+}
+
+.temperatureGroup, .windSpeedGroup, .precipitationGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-050);
+    width: 100%;
+}
+
+.temperatureButton, .windSpeedButton, .precipitationButton {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: var(--colors-neutral-0);
+    padding: var(--spacing-100) var(--spacing-125);
+}
+
+.temperatureButton:hover, .temperatureButton:active,
+.windSpeedButton:hover, .windSpeedButton:active,
+.precipitationButton:hover, .precipitationButton:active {
+    background-color: var(--colors-neutral-700);
+    border-radius: var(--corner-radius-8);
+}
+
+.divider {
+    width: 100%;
+    border: 1px solid var(--colors-neutral-600);
+    /* margin: var(--spacing-100) 0 var(--spacing-100) 0; */
 }

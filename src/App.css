@@ -8,4 +8,37 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     padding: var(--spacing-600) var(--spacing-1400) var(--spacing-1000);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-800);
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-600);
+}
+
+.weatherInfo {
+    display: flex;
+    gap: var(--spacing-400);
+    /* justify-content: center;    */
+}
+
+.WeatherGroup1 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-600);
+}
+
+.currentWeather-and-WeatherDetails {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+}
+
+.weatherDetailsContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-300);
 }

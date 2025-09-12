@@ -1,22 +1,72 @@
 /* Font Faces */
+/* Bricolage Grotesque Variable */
 @font-face {
   font-family: 'Bricolage Grotesque';
-  src: url('/src/assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz\,wdth\,wght.ttf') format('ttf');
-  font-weight: 100 700;
+  src: url('../assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+/* Bricolage Grotesque Bold Static */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('../assets/fonts/Bricolage_Grotesque/static/BricolageGrotesque-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
-
+/* DM Sans Variable */
 @font-face {
   font-family: 'DM Sans';
-  src: url('/src/assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf') format('ttf');
-  font-weight: 100 700;
+  src: url('../assets/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
-
+/* DM Sans Italic Variable */
 @font-face {
   font-family: 'DM Sans';
-  src: url('./src/assets/fonts/DM_Sans/DMSans-Italic-VariableFont_opsz\,wght.ttf') format('ttf');
-  font-weight: 100 700;
+  src: url('../assets/fonts/DM_Sans/DMSans-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
   font-style: italic;
+  font-display: swap;
+}
+/* DM Sans Static Weights */
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DM_Sans/static/DMSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DM_Sans/static/DMSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DM_Sans/static/DMSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DM_Sans/static/DMSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DM_Sans/static/DMSans-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
 }
 
 
@@ -80,75 +130,66 @@ html  {
 
 .text-preset-1 {
   font-family: var(--DM-Sans-family);
-  font-weight: semi-bold;
+  font-weight: 600;
   font-size: 9.6rem;
   letter-spacing: -2px;
   line-height: 100%;
-  color: var(--colors-neutral-900);
 } 
 
 .text-preset-2 {
   font-family: var(--Bricolage-Grotesque-family);
-  font-weight: bold;
+  font-weight: 700;
   line-height: 120%;
   font-size: 5.2rem;
-  color: var(--colors-neutral-900);
 }
 
 .text-preset-3 {
   font-family: var(--DM-Sans-family);
-  font-weight: light;
+  font-weight: 300;
   font-size: 3.2rem;
   line-height: 100%;
-  color: var(--colors-neutral-900);
 }
 
 .text-preset-4 {
   font-family: var(--DM-Sans-family);
-  font-weight: bold;
+  font-weight: 700;
   line-height: 120%;
   font-size: 2.8rem;
-  color: var(--colors-neutral-900);
 }
 
 .text-preset-5 {
   font-family: var(--DM-Sans-family);
-  font-weight: semi-bold;
+  font-weight: 600;
   font-size: 2rem;
   line-height: 120%;
-  color: var(--colors-neutral-900);
 }
 
 .text-preset-5-medium {
   font-family: var(--DM-Sans-family);
-  font-weight: medium;
+  font-weight: 500;
   font-size: 2rem;
   line-height: 120%;
-  color: var(--colors-neutral-900);
 }
 
 
 .text-preset-6 {
   font-family: var(--DM-Sans-family);
-  font-weight: medium;
+  font-weight: 500;
   font-size: 1.8rem;
   line-height: 120%;
-  color: var(--colors-neutral-900);
 }
 
 
 .text-preset-7 {
   font-family: var(--DM-Sans-family);
-  font-weight: medium;
+  font-weight: 500;
   font-size: 1.6rem;
   line-height: 120%;
-  color: var(--colors-neutral-900);
 }
 
 .text-preset-8 {
   font-family: var(--DM-Sans-family);
-  font-weight: medium;
+  font-weight: 500;
   line-height: 120%;
   font-size: 1.4rem;
-  color: var(--colors-neutral-900);
 }

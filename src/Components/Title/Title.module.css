@@ -1,0 +1,9 @@
+.titleContainer {
+    width: 100%;
+}
+
+.Title {
+    color: var(--colors-neutral-0);
+    text-align: center;
+
+}

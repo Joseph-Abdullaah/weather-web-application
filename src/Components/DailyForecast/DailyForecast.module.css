@@ -1,0 +1,49 @@
+.dailyForecastContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-250);
+}
+
+.dailyForecastTitle {
+    color: var(--colors-neutral-0);
+    text-align: left;
+    padding: 0;
+}
+
+.dailyForecastGroup {
+    width: 100%;
+    display: flex;
+    gap: var(--spacing-200);
+}
+
+.dailyForecast {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+    align-items: center;
+    width: 100%;
+    background-color: var(--colors-neutral-800);
+    border-radius: var(--corner-radius-12);
+    padding: var(--spacing-200) var(--spacing-125);
+}
+
+.temperatureIcon {
+    width: 60px;
+    height: 60px;
+}
+
+.day {
+    color: var(--colors-neutral-0);
+    text-align: left;
+    padding: 0;
+}
+
+.dailyForecastTemperature {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.temperature {
+    color: var(--colors-neutral-0);
+}

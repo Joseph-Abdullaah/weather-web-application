@@ -1,0 +1,43 @@
+.currentWeather {
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    background-image: url('/src/assets/images/bg-today-large.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: var(--spacing-1000) var(--spacing-300);
+    background-position: center;
+    border-radius: var(--corner-radius-20);
+}
+
+.country {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--spacing-150);
+}
+
+.countryName {
+    color: var(--colors-neutral-0);
+}
+
+.countryDate {
+    color: var(--colors-neutral-0);
+    padding: 0;
+}
+
+.countryWeather {
+    display: flex;
+    gap: var(--spacing-250);
+    align-items: center;
+}
+
+.weatherIcon {
+    width: 120px;
+    height: auto;
+}
+
+.temperature {
+    color: var(--colors-neutral-0);
+    font-style: italic;
+}
