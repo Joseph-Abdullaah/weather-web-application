@@ -49,3 +49,9 @@
 .searchButton:hover, .searchButton:active {
     background-color: var(--colors-blue-700);
 }
+
+@media (max-width: 376px) {
+    .searchContainer {
+        flex-direction: column;
+    }
+}

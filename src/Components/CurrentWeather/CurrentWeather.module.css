@@ -1,5 +1,6 @@
 .currentWeather {
-    width: 800px;
+    /* max-width: 800px; */
+    width: 100%;
     display: flex;
     justify-content: space-between;
     background-image: url('/src/assets/images/bg-today-large.svg');
@@ -11,6 +12,7 @@
 }
 
 .country {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,8 +29,10 @@
 }
 
 .countryWeather {
+    width: 100%;
     display: flex;
-    gap: var(--spacing-250);
+    justify-content: end;
+    /* gap: var(--spacing-250); */
     align-items: center;
 }
 
@@ -40,4 +44,34 @@
 .temperature {
     color: var(--colors-neutral-0);
     font-style: italic;
+}
+
+@media (max-width: 1275px) {
+    .currentWeather {
+        /* max-width: 100%; */
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    .currentWeather {
+        gap: var(--spacing-200);
+        padding: 41.4px var(--spacing-300);
+    }
+
+    .country, .countryWeather {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .countryWeather {
+        gap: var(--spacing-250);
+    }
+
+    .currentWeather {
+        flex-direction: column;
+        align-items: center;
+        background-image: url('/src/assets/images/bg-today-small.svg');
+    }
 }

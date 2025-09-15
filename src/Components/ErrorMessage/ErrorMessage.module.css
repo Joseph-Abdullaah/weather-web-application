@@ -1,0 +1,33 @@
+.errorMessageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-300);
+}
+
+.errorIcon {
+    width: 42px;
+    height: auto;
+}
+
+.errorTitle {
+    color: var(--colors-neutral-0);
+}
+
+.errorParagraph {
+    max-width: 554px;
+    width: 100%;
+    text-align: center;
+    color: var(--colors-neutral-200);
+    padding: 0;
+}
+
+.errorButton {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-125);
+    padding: var(--spacing-150) var(--spacing-200);
+    background-color: var(--colors-neutral-800);
+    border-radius: var(--corner-radius-8);
+    color: var(--colors-neutral-0);
+}

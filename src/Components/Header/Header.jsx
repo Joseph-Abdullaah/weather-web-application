@@ -12,7 +12,7 @@ function Header() {
   
   return (
     <div className={styles.headerContainer}>
-        <img src="./src/assets/images/logo.svg" alt="logo" />
+        <img className={styles.logo} src="./src/assets/images/logo.svg" alt="logo" />
         <button
         onClick={() => setIsDropdownOpen(!isDropdownOpen)} 
         className={`${styles.units} text-preset-7`}>

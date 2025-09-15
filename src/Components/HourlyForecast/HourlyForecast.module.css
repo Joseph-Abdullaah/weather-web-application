@@ -1,0 +1,72 @@
+.hourlyForecastContainer {
+    /* max-width: 384px; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+    padding: var(--spacing-300);
+    background-color: var(--colors-neutral-800);
+    border-radius: var(--corner-radius-12);
+}
+
+.hourlyForecast {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: var(--colors-neutral-800);
+}
+
+.hourlyForecastTitle {
+    color: var(--colors-neutral-0);
+}
+
+.days {
+    display: flex;
+    gap: var(--spacing-150);
+    align-items: center;
+    color: var(--colors-neutral-0);
+    background-color: var(--colors-neutral-600);
+    padding: var(--spacing-100) var(--spacing-200);
+    border-radius: var(--corner-radius-8);
+}
+
+.dropdownIcon {
+    width: var(--spacing-200);
+    height: var(--spacing-200);
+}
+
+.days:hover, .days:active {
+    background-color: var(--colors-neutral-700);
+}
+
+.hourlyForecastGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-200);
+    background-color: var(--colors-neutral-700);
+    border-radius: var(--corner-radius-8);
+    padding: var(--spacing-125) var(--spacing-200) var(--spacing-125) var(--spacing-150);
+}
+
+.forecast {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-100);
+}
+
+.forecastIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.time, .temperature {
+    color: var(--colors-neutral-0);
+}
+
+@media (max-width: 1275px) {
+    .hourlyForecastContainer {
+        width: 100%;
+    }
+} 

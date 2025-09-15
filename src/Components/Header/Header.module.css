@@ -1,4 +1,7 @@
 .headerContainer {
+    max-width: 1216px;
+    width: 100%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -34,6 +37,7 @@
     top: calc(2px + var(--spacing-600));
     right: 0;
     z-index: 2;
+    box-shadow: 0 8px 16px #02012C;
 }
 
 .switchButton {
@@ -79,4 +83,32 @@ p {
     width: 100%;
     border: 1px solid var(--colors-neutral-600);
     /* margin: var(--spacing-100) 0 var(--spacing-100) 0; */
+}
+
+@media (max-width: 375px) {
+    .logo {
+        width: 137.9px;
+        height: auto;
+    }
+    .units {
+        font-size: 14px;
+        padding: var(--spacing-100) var(--spacing-125);
+    }
+
+    .unitIcon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .dropdownIcon {
+        width: 9px;
+        height: 14px;
+    }
+
+
+
+    /* .headerContainer {
+        flex-direction: column;
+        gap: var(--spacing-200);
+    } */
 }

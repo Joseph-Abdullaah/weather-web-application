@@ -12,7 +12,8 @@
 
 .dailyForecastGroup {
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
     gap: var(--spacing-200);
 }
 
@@ -46,4 +47,16 @@
 
 .temperature {
     color: var(--colors-neutral-0);
+}
+
+@media (max-width: 700px) {
+    .dailyForecastGroup {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    .dailyForecastGroup {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
