@@ -7,6 +7,7 @@ import WeatherDetails from './Components/WeatherDetails/WeatherDetails'
 import DailyForecast from './Components/DailyForecast/DailyForecast'
 import HourlyForecast from './Components/HourlyForecast/HourlyForecast'
 import ErrorMessage from './Components/ErrorMessage/ErrorMessage'
+import LoadingSpinner from './Components/LoadingSpinner/LoadingSpinner'
 import './App.css'
 
 
