@@ -8,6 +8,7 @@ import DailyForecast from './Components/DailyForecast/DailyForecast'
 import HourlyForecast from './Components/HourlyForecast/HourlyForecast'
 import ErrorMessage from './Components/ErrorMessage/ErrorMessage'
 import LoadingSpinner from './Components/LoadingSpinner/LoadingSpinner'
+import LoadingSkeleton from './Components/LoadingSkeleton/LoadingSkeleton'
 import './App.css'
 
 
@@ -19,7 +20,8 @@ function App() {
       <Title />
       <main className="mainContent">
         <SearchBar />
-        <div className="weatherInfo">
+        <LoadingSkeleton />
+        {/* <div className="weatherInfo">
           <div className='WeatherGroup1'>
             <div className='currentWeather-and-WeatherDetails'>
               <CurrentWeather />
@@ -35,7 +37,7 @@ function App() {
           <div className='weatherGroup2'>
             <HourlyForecast />
           </div>
-        </div>
+        </div> */}
       </main>
     </div>
   )

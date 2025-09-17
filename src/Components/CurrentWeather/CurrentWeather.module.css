@@ -1,5 +1,5 @@
 .currentWeather {
-    /* max-width: 800px; */
+    max-height: 286px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -12,6 +12,7 @@
 }
 
 .country {
+    height: 126px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -29,6 +30,7 @@
 }
 
 .countryWeather {
+    height: 126px;
     width: 100%;
     display: flex;
     justify-content: end;

@@ -25,6 +25,7 @@
     width: 100%;
     background-color: var(--colors-neutral-800);
     border-radius: var(--corner-radius-12);
+    border: 1px solid var(--colors-neutral-600);
     padding: var(--spacing-200) var(--spacing-125);
 }
 

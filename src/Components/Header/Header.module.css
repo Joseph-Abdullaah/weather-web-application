@@ -85,11 +85,12 @@ p {
     /* margin: var(--spacing-100) 0 var(--spacing-100) 0; */
 }
 
-@media (max-width: 375px) {
+@media (max-width: 376px) {
     .logo {
         width: 137.9px;
         height: auto;
     }
+    
     .units {
         font-size: 14px;
         padding: var(--spacing-100) var(--spacing-125);

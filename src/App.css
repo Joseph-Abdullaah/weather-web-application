@@ -61,6 +61,11 @@ body {
 @media (max-width: 1275px) {
     .main-container {
         padding: var(--spacing-300) var(--spacing-300) var(--spacing-1000);
+        gap: var(--spacing-600);
+    }
+
+    .mainContent {
+        gap: var(--spacing-400);
     }
 
     .weatherInfo {
@@ -70,6 +75,14 @@ body {
 
     .WeatherGroup1, .weatherGroup2 {
         width: 100%;
+    }
+
+    .weatherGroup1 {
+        gap: var(--spacing-400);
+    }
+
+    .currentWeather-and-WeatherDetails {
+        gap: var(--spacing-250);
     }
 }
 

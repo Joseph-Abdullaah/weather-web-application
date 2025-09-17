@@ -17,6 +17,10 @@
     transition: all 0.1s ease-in-out;
 }
 
+.search:focus-within {
+    outline: 2px solid var(--colors-neutral-0);
+}
+
 .search:hover, .search:active {
     background-color: var(--colors-neutral-700);
 }
@@ -48,6 +52,10 @@
 
 .searchButton:hover, .searchButton:active {
     background-color: var(--colors-blue-700);
+}
+
+.searchButton:focus {
+    outline: 2px solid var(--colors-blue-500);
 }
 
 @media (max-width: 376px) {

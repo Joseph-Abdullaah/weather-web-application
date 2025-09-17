@@ -6,6 +6,7 @@
     padding: var(--spacing-250) var(--spacing-250);
     background-color: var(--colors-neutral-800);
     border-radius: var(--corner-radius-12);
+    border: 1px solid var(--colors-neutral-600);
 }
 
 .title {
