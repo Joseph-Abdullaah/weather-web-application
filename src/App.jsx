@@ -20,8 +20,8 @@ function App() {
       <Title />
       <main className="mainContent">
         <SearchBar />
-        <LoadingSkeleton />
-        {/* <div className="weatherInfo">
+        {/* <LoadingSkeleton /> */}
+        <div className="weatherInfo">
           <div className='WeatherGroup1'>
             <div className='currentWeather-and-WeatherDetails'>
               <CurrentWeather />
@@ -37,7 +37,7 @@ function App() {
           <div className='weatherGroup2'>
             <HourlyForecast />
           </div>
-        </div> */}
+        </div>
       </main>
     </div>
   )
