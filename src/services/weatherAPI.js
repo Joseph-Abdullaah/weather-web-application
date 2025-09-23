@@ -31,6 +31,8 @@ export const fetchWeatherData = async (latitude, longitude) => {
 
 
 
+
+
 export async function searchLocations(query) {
     if (!query.trim()) {
         return [];
@@ -68,4 +70,3 @@ export async function searchLocations(query) {
     }
 };
 
-searchLocations("banaadir")

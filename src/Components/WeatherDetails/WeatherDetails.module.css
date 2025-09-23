@@ -1,3 +1,10 @@
+.weatherDetailsContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: var(--spacing-300);
+}
+
+
 .weatherDetails {
     width: 100%;
     display: flex;
@@ -18,4 +25,11 @@
 .value {
     color: var(--colors-neutral-0);
     text-align: left;
+}
+
+@media (max-width: 690px) {
+    .weatherDetailsContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-200);
+    }
 }

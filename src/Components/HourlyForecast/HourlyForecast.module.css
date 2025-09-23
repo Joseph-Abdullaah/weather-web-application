@@ -1,13 +1,35 @@
 .hourlyForecastContainer {
     /* max-width: 384px; */
-    min-height: 693px;
+    height: 693px;
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-200);
     padding: var(--spacing-300);
     background-color: var(--colors-neutral-800);
-    border-radius: var(--corner-radius-12);
+    border-radius: var(--corner-radius-20);
+}
+
+/* Styling the overall scrollbar track */
+::-webkit-scrollbar {
+  width: 4px; /* Adjust width for vertical scrollbar */
+  height: 262px; /* Adjust height for horizontal scrollbar */
+}
+
+/* Styling the scrollbar track */
+::-webkit-scrollbar-track {
+  background: none; /* Background color of the track */
+}
+
+/* Styling the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #302F4A; /* Background color of the thumb */
+  border-radius: var(--corner-radius-12); /* Rounded corners for the thumb */
+}
+
+/* Styling the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker background on hover */
 }
 
 .hourlyForecast {
@@ -16,6 +38,7 @@
     align-items: center;
     width: 100%;
     background-color: var(--colors-neutral-800);
+    position: relative;
 }
 
 .hourlyForecastTitle {
@@ -28,7 +51,7 @@
     align-items: center;
     color: var(--colors-neutral-0);
     background-color: var(--colors-neutral-600);
-    padding: var(--spacing-100) var(--spacing-200);
+  ;  padding: var(--spacing-100) var(--spacing-200);
     border-radius: var(--corner-radius-8);
 }
 
@@ -41,7 +64,46 @@
     background-color: var(--colors-neutral-700);
 }
 
+.dayDropdownContainer {
+    display: none;
+    flex-direction: column;
+    gap: var(--spacing-050);
+    padding: var(--spacing-100);
+    position: absolute;
+    top: var(--spacing-600);
+    right: 0;
+    background-color: var(--colors-neutral-800);
+    border: 1px solid var(--colors-neutral-600);
+    border-radius: var(--corner-radius-12);
+    box-shadow: 0 8px 16px #02012C;
+    z-index: 10;
+    max-width: 214px;
+    width: 100%;
+    border: solid 1px var(--colors-neutral-600);
+}
+
+.day {
+    color: var(--colors-neutral-0);
+    padding: var(--spacing-125) var(--spacing-100);
+    border-radius: var(--corner-radius-8);
+}
+
+.day:hover, .day:active {
+    background-color: var(--colors-neutral-700);
+    cursor: pointer;
+}
+
+.hourlyForecastGroupContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
 .hourlyForecastGroup {
+    max-height: 60px ;
     display: flex;
     justify-content: space-between;
     align-items: center;

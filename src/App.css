@@ -42,11 +42,6 @@ body {
     gap: var(--spacing-400);
 }
 
-.weatherDetailsContainer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: var(--spacing-300);
-}
 
 .weatherGroup2 {
     width: 100%;
@@ -92,8 +87,8 @@ body {
         padding: var(--spacing-200) var(--spacing-200) var(--spacing-600);
     }
 
-    .weatherDetailsContainer {
+    /* .weatherDetailsContainer {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-200);
-    }
+    } */
 }
