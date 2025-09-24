@@ -5,9 +5,9 @@ export const fetchWeatherData = async (latitude, longitude) => {
         const params = new URLSearchParams({
             latitude: latitude.toString(),
             longitude: longitude.toString(),
-            current: 'temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m,precipitation',
-            hourly: 'temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability,weather_code,wind_speed_10m',
-            daily: 'weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset,precipitation_sum,precipitation_probability_max,wind_speed_10m_max',
+            current: 'temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m,precipitation,is_day',
+            hourly: 'temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability,weather_code,wind_speed_10m,',
+            daily: 'weather_code,temperature_2m_max,temperature_2m_min,',
             timezone: 'auto',
             temperature_unit: 'celsius',
             wind_speed_unit: 'kmh',
@@ -62,8 +62,8 @@ export async function searchLocations(query) {
             latitude: parseFloat(element.lat),
             longitude: parseFloat(element.lon),
         }));
-        console.log(formattedData);
-        return data;
+        // console.log(formattedData);
+        return formattedData;
 
     } catch (error) {
         throw new Error(`Failed to search locations: ${error.message}`);

@@ -32,3 +32,7 @@
     border-radius: var(--corner-radius-8);
     color: var(--colors-neutral-0);
 }
+
+.errorButton:hover, .errorButton:active {
+    background-color: var(--colors-neutral-700);
+}
