@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./DailyForecast.module.css";
 import { useWeather } from "../../contexts/WeatherContext";
+import { getWeatherIcon } from "../../utils/helpers";
 
 function DailyForecast() {
   const { weatherData } = useWeather();
@@ -37,8 +38,8 @@ function DailyForecast() {
             <p className={`${styles.day} text-preset-6`}>{day.day}</p>
             <img
               className={styles.temperatureIcon}
-              src="/src/assets/images/icon-rain.webp"
-              alt={`rainIcon${day.weather_code}`}
+              src={getWeatherIcon(day.weather_code)}
+              alt='weather-icon'
             />
             <div className={styles.dailyForecastTemperature}>
               <span

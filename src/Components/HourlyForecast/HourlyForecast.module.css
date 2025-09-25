@@ -51,7 +51,7 @@
     align-items: center;
     color: var(--colors-neutral-0);
     background-color: var(--colors-neutral-600);
-  ;  padding: var(--spacing-100) var(--spacing-200);
+    padding: var(--spacing-100) var(--spacing-200);
     border-radius: var(--corner-radius-8);
 }
 
