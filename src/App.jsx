@@ -1,33 +1,32 @@
-import React from 'react'
-import { WeatherProvider, useWeather } from './contexts/WeatherContext'
-import Header from './Components/Header/Header'
-import Title from './Components/Title/Title'
-import SearchBar from './Components/SearchBar/SearchBar'
-import ErrorMessage from './Components/ErrorMessage/ErrorMessage'
-import './App.css'
-import WeatherContent from './content/weatherContent'
-
-
+import React from "react";
+import { WeatherProvider, useWeather } from "./contexts/WeatherContext";
+import Header from "./Components/Header/Header";
+import Title from "./Components/Title/Title";
+import SearchBar from "./Components/SearchBar/SearchBar";
+import ErrorMessage from "./Components/ErrorMessage/ErrorMessage";
+import "./App.css";
+import WeatherContent from "./content/weatherContent";
+import { UnitProvider } from "./contexts/UnitContext";
 
 function AppLayout() {
-  const {error} = useWeather()
+  const { error } = useWeather();
 
   // API Error State - Complete layout change
-  if (error && error.type === 'api') {
+  if (error && error.type === "api") {
     return (
-      <div className='main-container'>
+      <div className="main-container">
         <Header />
         {/* Notice: NO Title, NO SearchBar */}
         <main className="mainContent">
           <ErrorMessage />
         </main>
       </div>
-    )
+    );
   }
 
   // Normal State - Show everything
   return (
-    <div className='main-container'>
+    <div className="main-container">
       <Header />
       <Title />
       <main className="mainContent">
@@ -35,16 +34,17 @@ function AppLayout() {
         <WeatherContent /> {/* This handles loading/success/search errors */}
       </main>
     </div>
-  )
+  );
 }
- 
 
 function App() {
   return (
-    <WeatherProvider>
-      <AppLayout />
-    </WeatherProvider>
-  )
+    <UnitProvider>
+      <WeatherProvider>
+        <AppLayout />
+      </WeatherProvider>
+    </UnitProvider>
+  );
 }
 
-export default App
+export default App;

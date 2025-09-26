@@ -1,5 +1,6 @@
 // contexts/WeatherContext.jsx
 import { createContext, useContext, useState, useEffect } from 'react';
+import { useUnit } from './UnitContext'; // Import the unit hook
 import { fetchWeatherData, searchLocations as apiSearch } from '../services/weatherAPI';
 
 const WeatherContext = createContext();
@@ -13,6 +14,8 @@ export const useWeather = () => {
 };
 
 export const WeatherProvider = ({ children }) => {
+  const { units } = useUnit(); // Get current units from UnitContext
+  
   // State for weather data and location
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -27,13 +30,13 @@ export const WeatherProvider = ({ children }) => {
   const [searchResults, setSearchResults] = useState([]);
   const [searching, setSearching] = useState(false);
 
-  // Function to fetch weather data
-  const getWeatherData = async (lat, lon) => {
+  // Function to fetch weather data - NOW ACCEPTS UNIT PARAMETERS
+  const getWeatherData = async (lat, lon, unitParams = units) => {
     setLoading(true);
-    setError(null); // Clear any previous errors
+    setError(null);
     
     try {
-      const data = await fetchWeatherData(lat, lon);
+      const data = await fetchWeatherData(lat, lon, unitParams);
       setWeatherData(data);
     } catch (err) {
       setError({ 
@@ -45,62 +48,57 @@ export const WeatherProvider = ({ children }) => {
     }
   };
 
-  // Function to search for locations
+  // Function to search for locations (unchanged)
   const searchLocations = async (query) => {
-    // Clear previous errors when starting a new search
     setError(null);
     
-    // If query is empty, clear results and exit
     if (!query.trim()) {
       setSearchResults([]);
       return;
     }
 
     setSearching(true);
-    setSearchResults([]); // Clear previous search results
+    setSearchResults([]);
 
     try {
       const results = await apiSearch(query);
       setSearchResults(results);
       
-      // If no results found, set a search error
       if (results.length === 0) {
-        setError({ 
-          type: 'search', 
-          message: 'No search results found!' 
-        });
+        setError({ type: 'search', message: 'No search results found!' });
       }
     } catch (err) {
-      setError({ 
-        type: 'search', 
-        message: 'Failed to search locations. Please try again.' 
-      });
+      setError({ type: 'search', message: 'Failed to search locations. Please try again.' });
       setSearchResults([]);
     } finally {
       setSearching(false);
     }
   };
 
-  // Function to set new location and fetch its weather
+  // Function to set new location - uses current units
   const setNewLocation = (newLocation) => {
     setLocation(newLocation);
-    setError(null); // Clear errors when changing location
-    getWeatherData(newLocation.latitude, newLocation.longitude);
-    setSearchResults([]); // Clear search results when location is selected
+    setError(null);
+    getWeatherData(newLocation.latitude, newLocation.longitude, units);
+    setSearchResults([]);
+  };
+
+  // NEW: Function to update units and refetch data
+  const updateUnitsAndRefetch = (newUnits) => {
+    getWeatherData(location.latitude, location.longitude, newUnits);
   };
 
   // Function to retry the last operation
   const retry = () => {
     setError(null);
-    getWeatherData(location.latitude, location.longitude);
+    getWeatherData(location.latitude, location.longitude, units);
   };
 
-  // Fetch weather for default location on app start
+  // Fetch weather when component mounts OR when units change
   useEffect(() => {
-    getWeatherData(location.latitude, location.longitude);
-  }, []); // Empty dependency array means this runs once on mount
+    getWeatherData(location.latitude, location.longitude, units);
+  }, [units]); // Now refetches when units change!
 
-  // Value object to be provided to consuming components
   const value = {
     // State
     weatherData,
@@ -114,6 +112,7 @@ export const WeatherProvider = ({ children }) => {
     fetchWeatherData: getWeatherData,
     searchLocations,
     setLocation: setNewLocation,
+    updateUnitsAndRefetch, // New function
     retry,
   };
 

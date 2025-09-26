@@ -1,4 +1,4 @@
-export const fetchWeatherData = async (latitude, longitude) => {
+export const fetchWeatherData = async (latitude, longitude, unitParams = {}) => {
 
     try {
         const baseUrl = 'https://api.open-meteo.com/v1/forecast?';
@@ -9,9 +9,9 @@ export const fetchWeatherData = async (latitude, longitude) => {
             hourly: 'temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability,weather_code,wind_speed_10m,',
             daily: 'weather_code,temperature_2m_max,temperature_2m_min,',
             timezone: 'auto',
-            temperature_unit: 'celsius',
-            wind_speed_unit: 'kmh',
-            precipitation_unit: 'mm'
+            temperature_unit: unitParams.temperature || 'celsius',
+            wind_speed_unit: unitParams.windSpeed || 'kmh',
+            precipitation_unit: unitParams.precipitation || 'mm'
         });
 
         const url = `${baseUrl}${params.toString()}`;
