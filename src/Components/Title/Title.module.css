@@ -1,17 +1,16 @@
 .titleContainer {
-    width: 100%;
+  width: 100%;
 }
 
 .Title {
-    color: var(--colors-neutral-0);
-    text-align: center;
-
+  color: var(--colors-neutral-0);
+  text-align: center;
 }
 
 @media (max-width: 769px) {
-    .titleContainer {
-        max-width: 482px;
-        width: 100%;
-        margin: 0 auto;
-    }
+  .titleContainer {
+    max-width: 482px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }

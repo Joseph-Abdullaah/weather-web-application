@@ -1,63 +1,63 @@
 .dailyForecastContainer {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-250);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-250);
 }
 
 .dailyForecastTitle {
-    color: var(--colors-neutral-0);
-    text-align: left;
-    padding: 0;
+  color: var(--colors-neutral-0);
+  text-align: left;
+  padding: 0;
 }
 
 .dailyForecastGroup {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: var(--spacing-200);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--spacing-200);
 }
 
 .dailyForecast {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-200);
-    align-items: center;
-    width: 100%;
-    background-color: var(--colors-neutral-800);
-    border-radius: var(--corner-radius-12);
-    border: 1px solid var(--colors-neutral-600);
-    padding: var(--spacing-200) var(--spacing-125);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+  align-items: center;
+  width: 100%;
+  background-color: var(--colors-neutral-800);
+  border-radius: var(--corner-radius-12);
+  border: 1px solid var(--colors-neutral-600);
+  padding: var(--spacing-200) var(--spacing-125);
 }
 
 .temperatureIcon {
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
 }
 
 .day {
-    color: var(--colors-neutral-0);
-    text-align: left;
-    padding: 0;
+  color: var(--colors-neutral-0);
+  text-align: left;
+  padding: 0;
 }
 
 .dailyForecastTemperature {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .temperature {
-    color: var(--colors-neutral-0);
+  color: var(--colors-neutral-0);
 }
 
 @media (max-width: 700px) {
-    .dailyForecastGroup {
-        grid-template-columns: repeat(4, 1fr);
-    }
+  .dailyForecastGroup {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @media (max-width: 450px) {
-    .dailyForecastGroup {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .dailyForecastGroup {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

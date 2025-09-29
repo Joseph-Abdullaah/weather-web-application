@@ -1,121 +1,123 @@
 .searchContainer {
-    max-width: 656px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    gap: var(--spacing-200);
+  max-width: 656px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  gap: var(--spacing-200);
 }
 
 .search {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-200);
-    padding: var(--spacing-200) var(--spacing-300);
-    border-radius: var(--corner-radius-8);
-    background-color: var(--colors-neutral-800);
-    position: relative;
-    transition: all 0.1s ease-in-out;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-200);
+  padding: var(--spacing-200) var(--spacing-300);
+  border-radius: var(--corner-radius-8);
+  background-color: var(--colors-neutral-800);
+  position: relative;
+  transition: all 0.1s ease-in-out;
 }
 
 .search:focus-within {
-    outline: 2px solid var(--colors-neutral-0);
+  outline: 2px solid var(--colors-neutral-0);
 }
 
-.search:hover, .search:active {
-    background-color: var(--colors-neutral-700);
+.search:hover,
+.search:active {
+  background-color: var(--colors-neutral-700);
 }
 
 .searchIcon {
-    width: var(--spacing-250);
-    height: var(--spacing-250)
+  width: var(--spacing-250);
+  height: var(--spacing-250);
 }
 
 .searchInput {
-    width: 100%;
-    text-align: left;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: var(--colors-neutral-200);
+  width: 100%;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--colors-neutral-200);
 }
 
 .searchInput::placeholder {
-    color: var(--colors-neutral-200);
+  color: var(--colors-neutral-200);
 }
 
 .searchButton {
-    background-color: var(--colors-blue-500);
-    border-radius: var(--corner-radius-12);
-    padding: var(--spacing-200) var(--spacing-300);
-    color: var(--colors-neutral-0);
+  background-color: var(--colors-blue-500);
+  border-radius: var(--corner-radius-12);
+  padding: var(--spacing-200) var(--spacing-300);
+  color: var(--colors-neutral-0);
 }
 
-.searchButton:hover, .searchButton:active {
-    background-color: var(--colors-blue-700);
+.searchButton:hover,
+.searchButton:active {
+  background-color: var(--colors-blue-700);
 }
 
 .searchButton:focus {
-    outline: 2px solid var(--colors-blue-500);
+  outline: 2px solid var(--colors-blue-500);
 }
 
-
 .searchResultsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-050);
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    max-height: 184px;
-    overflow-y: auto;
-    background-color: var(--colors-neutral-800);
-    border: 1px solid var(--colors-neutral-700);
-    border-radius: var(--corner-radius-12);
-    padding: var(--spacing-100);
-    z-index: 10;
-    transition: all 0.1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-050);
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  max-height: 184px;
+  overflow-y: auto;
+  background-color: var(--colors-neutral-800);
+  border: 1px solid var(--colors-neutral-700);
+  border-radius: var(--corner-radius-12);
+  padding: var(--spacing-100);
+  z-index: 10;
+  transition: all 0.1s ease-in-out;
 }
 
 .searchResultItem {
-    color: var(--colors-neutral-0);
-    padding: var(--spacing-125) var(--spacing-100);
-    border-radius: var(--corner-radius-8);
-    transition: all 0.1s ease-in-out;
+  color: var(--colors-neutral-0);
+  padding: var(--spacing-125) var(--spacing-100);
+  border-radius: var(--corner-radius-8);
+  transition: all 0.1s ease-in-out;
 }
 
-.searchResultItem:hover, .searchResultItem:active {
-    background-color: var(--colors-neutral-700);
+.searchResultItem:hover,
+.searchResultItem:active {
+  background-color: var(--colors-neutral-700);
 }
 
 .searchInprogressContainer {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--colors-neutral-800);
-    border: 1px solid var(--colors-neutral-700);
-    border-radius: var(--corner-radius-12);
-    padding: var(--spacing-100);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-125);
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--colors-neutral-800);
+  border: 1px solid var(--colors-neutral-700);
+  border-radius: var(--corner-radius-12);
+  padding: var(--spacing-100);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-125);
 }
 
 .loadingIcon {
-    width: 16px;
-    height: 19px;
+  width: 16px;
+  height: 19px;
 }
 
 .searchInprogress {
-    padding: 0;
-    color: var(--colors-neutral-0);
+  padding: 0;
+  color: var(--colors-neutral-0);
 }
 
 @media (max-width: 376px) {
-    .searchContainer {
-        flex-direction: column;
-    }
+  .searchContainer {
+    flex-direction: column;
+  }
 }

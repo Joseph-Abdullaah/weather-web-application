@@ -1,13 +1,13 @@
 .hourlyForecastContainer {
-    /* max-width: 384px; */
-    height: 693px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-200);
-    padding: var(--spacing-300);
-    background-color: var(--colors-neutral-800);
-    border-radius: var(--corner-radius-20);
+  /* max-width: 384px; */
+  height: 693px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+  padding: var(--spacing-300);
+  background-color: var(--colors-neutral-800);
+  border-radius: var(--corner-radius-20);
 }
 
 /* Styling the overall scrollbar track */
@@ -23,7 +23,7 @@
 
 /* Styling the scrollbar thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
-  background: #302F4A; /* Background color of the thumb */
+  background: #302f4a; /* Background color of the thumb */
   border-radius: var(--corner-radius-12); /* Rounded corners for the thumb */
 }
 
@@ -33,104 +33,108 @@
 }
 
 .hourlyForecast {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background-color: var(--colors-neutral-800);
-    position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: var(--colors-neutral-800);
+  position: relative;
 }
 
 .hourlyForecastTitle {
-    color: var(--colors-neutral-0);
+  color: var(--colors-neutral-0);
 }
 
 .days {
-    display: flex;
-    gap: var(--spacing-150);
-    align-items: center;
-    color: var(--colors-neutral-0);
-    background-color: var(--colors-neutral-600);
-    padding: var(--spacing-100) var(--spacing-200);
-    border-radius: var(--corner-radius-8);
+  display: flex;
+  gap: var(--spacing-150);
+  align-items: center;
+  color: var(--colors-neutral-0);
+  background-color: var(--colors-neutral-600);
+  padding: var(--spacing-100) var(--spacing-200);
+  border-radius: var(--corner-radius-8);
 }
 
 .dropdownIcon {
-    width: var(--spacing-200);
-    height: var(--spacing-200);
+  width: var(--spacing-200);
+  height: var(--spacing-200);
 }
 
-.days:hover, .days:active {
-    background-color: var(--colors-neutral-700);
+.days:hover,
+.days:active {
+  background-color: var(--colors-neutral-700);
 }
 
 .dayDropdownContainer {
-    display: none;
-    flex-direction: column;
-    gap: var(--spacing-050);
-    padding: var(--spacing-100);
-    position: absolute;
-    top: var(--spacing-600);
-    right: 0;
-    background-color: var(--colors-neutral-800);
-    border: 1px solid var(--colors-neutral-600);
-    border-radius: var(--corner-radius-12);
-    box-shadow: 0 8px 16px #02012C;
-    z-index: 10;
-    max-width: 214px;
-    width: 100%;
-    border: solid 1px var(--colors-neutral-600);
+  display: none;
+  flex-direction: column;
+  gap: var(--spacing-050);
+  padding: var(--spacing-100);
+  position: absolute;
+  top: var(--spacing-600);
+  right: 0;
+  background-color: var(--colors-neutral-800);
+  border: 1px solid var(--colors-neutral-600);
+  border-radius: var(--corner-radius-12);
+  box-shadow: 0 8px 16px #02012c;
+  z-index: 10;
+  max-width: 214px;
+  width: 100%;
+  border: solid 1px var(--colors-neutral-600);
 }
 
 .day {
-    color: var(--colors-neutral-0);
-    padding: var(--spacing-125) var(--spacing-100);
-    border-radius: var(--corner-radius-8);
+  color: var(--colors-neutral-0);
+  padding: var(--spacing-125) var(--spacing-100);
+  border-radius: var(--corner-radius-8);
 }
 
-.day:hover, .day:active {
-    background-color: var(--colors-neutral-700);
-    cursor: pointer;
+.day:hover,
+.day:active {
+  background-color: var(--colors-neutral-700);
+  cursor: pointer;
 }
 
 .hourlyForecastGroupContainer {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-200);
-    height: 100%;
-    width: 100%;
-    overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+  height: 100%;
+  width: 100%;
+  overflow: auto;
 }
 
 .hourlyForecastGroup {
-    max-height: 60px ;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--spacing-200);
-    background-color: var(--colors-neutral-700);
-    border-radius: var(--corner-radius-8);
-    border: 1px solid var(--colors-neutral-600);
-    padding: var(--spacing-125) var(--spacing-200) var(--spacing-125) var(--spacing-150);
+  max-height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-200);
+  background-color: var(--colors-neutral-700);
+  border-radius: var(--corner-radius-8);
+  border: 1px solid var(--colors-neutral-600);
+  padding: var(--spacing-125) var(--spacing-200) var(--spacing-125)
+    var(--spacing-150);
 }
 
 .forecast {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-100);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-100);
 }
 
 .forecastIcon {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }
 
-.time, .temperature {
-    color: var(--colors-neutral-0);
+.time,
+.temperature {
+  color: var(--colors-neutral-0);
 }
 
 @media (max-width: 1275px) {
-    .hourlyForecastContainer {
-        width: 100%;
-    }
-} 
+  .hourlyForecastContainer {
+    width: 100%;
+  }
+}

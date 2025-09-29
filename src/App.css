@@ -1,93 +1,93 @@
 body {
-    background-color: var(--colors-neutral-900);
-    font-family: var(--DM-Sans-family);
-    font-family: var(--Bricolage-Grotesque-family);
+  background-color: var(--colors-neutral-900);
+  font-family: var(--DM-Sans-family);
+  font-family: var(--Bricolage-Grotesque-family);
 }
 
 .main-container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: var(--spacing-600) var(--spacing-1400) var(--spacing-1000);
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-800);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--spacing-600) var(--spacing-1400) var(--spacing-1000);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-800);
 }
 
 .mainContent {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--spacing-600);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--spacing-600);
 }
 
 .weatherInfo {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 800px 384px;
-    column-gap: var(--spacing-400);
-    justify-content: center;   
+  width: 100%;
+  display: grid;
+  grid-template-columns: 800px 384px;
+  column-gap: var(--spacing-400);
+  justify-content: center;
 }
 
 .WeatherGroup1 {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: var(--spacing-600);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing-600);
 }
 
 .currentWeather-and-WeatherDetails {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-400);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
 }
 
-
 .weatherGroup2 {
-    width: 100%;
+  width: 100%;
 }
 
 @media (max-width: 1439px) {
-    .main-container {
-        padding: var(--spacing-600) var(--spacing-300) var(--spacing-1000);
-    }
+  .main-container {
+    padding: var(--spacing-600) var(--spacing-300) var(--spacing-1000);
+  }
 }
 
 @media (max-width: 1275px) {
-    .main-container {
-        padding: var(--spacing-300) var(--spacing-300) var(--spacing-1000);
-        gap: var(--spacing-600);
-    }
+  .main-container {
+    padding: var(--spacing-300) var(--spacing-300) var(--spacing-1000);
+    gap: var(--spacing-600);
+  }
 
-    .mainContent {
-        gap: var(--spacing-400);
-    }
+  .mainContent {
+    gap: var(--spacing-400);
+  }
 
-    .weatherInfo {
-        grid-template-columns: 1fr;
-        row-gap: var(--spacing-400);
-    }
+  .weatherInfo {
+    grid-template-columns: 1fr;
+    row-gap: var(--spacing-400);
+  }
 
-    .WeatherGroup1, .weatherGroup2 {
-        width: 100%;
-    }
+  .WeatherGroup1,
+  .weatherGroup2 {
+    width: 100%;
+  }
 
-    .weatherGroup1 {
-        gap: var(--spacing-400);
-    }
+  .weatherGroup1 {
+    gap: var(--spacing-400);
+  }
 
-    .currentWeather-and-WeatherDetails {
-        gap: var(--spacing-250);
-    }
+  .currentWeather-and-WeatherDetails {
+    gap: var(--spacing-250);
+  }
 }
 
 @media (max-width: 690px) {
-    .main-container {
-        /* align-items: center; */
-        padding: var(--spacing-200) var(--spacing-200) var(--spacing-600);
-    }
+  .main-container {
+    /* align-items: center; */
+    padding: var(--spacing-200) var(--spacing-200) var(--spacing-600);
+  }
 
-    /* .weatherDetailsContainer {
+  /* .weatherDetailsContainer {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-200);
     } */

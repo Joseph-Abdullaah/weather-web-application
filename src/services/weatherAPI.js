@@ -39,13 +39,14 @@ export async function searchLocations(query) {
     };
 
     try {
-        const baseUrl = "https://nominatim.openstreetmap.org/search?";
+        const baseUrl = "https://geocoding-api.open-meteo.com/v1/search?";
         const params = new URLSearchParams({
-            q: query,
+            name: query,
             format: "json",
-            addressdetails: 1,
-            limit: 5,
-            namedetails: 1
+            // addressdetails: 1,
+            count: 10,
+            language: "en",
+            // namedetails: 1
         });
 
         const url = `${baseUrl}${params.toString()}`;
@@ -57,12 +58,12 @@ export async function searchLocations(query) {
         // Parse the JSON response
         const data = await response.json();
         console.log(data);
-        const formattedData = data.map(element => ({
-            name: element.display_name,
-            latitude: parseFloat(element.lat),
-            longitude: parseFloat(element.lon),
+        const formattedData = data.results.map(element => ({
+            name: element.name,
+            latitude: parseFloat(element.latitude),
+            longitude: parseFloat(element.longitude),
         }));
-        // console.log(formattedData);
+        console.log(formattedData);
         return formattedData;
 
     } catch (error) {

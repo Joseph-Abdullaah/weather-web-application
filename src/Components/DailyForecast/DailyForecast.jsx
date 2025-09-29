@@ -39,7 +39,7 @@ function DailyForecast() {
             <img
               className={styles.temperatureIcon}
               src={getWeatherIcon(day.weather_code)}
-              alt='weather-icon'
+              alt="weather-icon"
             />
             <div className={styles.dailyForecastTemperature}>
               <span
