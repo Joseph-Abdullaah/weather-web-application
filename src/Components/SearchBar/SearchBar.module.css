@@ -100,7 +100,7 @@
   background-color: var(--colors-neutral-800);
   border: 1px solid var(--colors-neutral-700);
   border-radius: var(--corner-radius-12);
-  padding: var(--spacing-100);
+  padding: 1.8rem var(--spacing-200);
   display: flex;
   align-items: center;
   gap: var(--spacing-125);
@@ -109,6 +109,16 @@
 .loadingIcon {
   width: 16px;
   height: 19px;
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .searchInprogress {

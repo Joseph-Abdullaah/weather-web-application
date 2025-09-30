@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useUnit } from "../../contexts/UnitContext";
 import styles from "./Header.module.css";
 
+
 function Header() {
   const { units, toggleBulkUnits, updateUnit } = useUnit();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -68,6 +69,7 @@ function Header() {
         Units
         <img
           className={styles.dropdownIcon}
+          style={{ transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease-in-out' }}
           src="./src/assets/images/icon-dropdown.svg"
           alt="dropdown"
         />
