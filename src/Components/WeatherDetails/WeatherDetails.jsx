@@ -7,7 +7,6 @@ function WeatherDetails() {
   // const { wind_speed_10m, precipitation } = weatherData.current_units;
   const { wind_speed_10m: windUnit, precipitation: precipUnit } =
     weatherData.current_units;
-  console.log(weatherData);
   const {
     apparent_temperature,
     relative_humidity_2m,

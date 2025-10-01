@@ -63,7 +63,7 @@ export async function searchLocations(query) {
             latitude: parseFloat(element.latitude),
             longitude: parseFloat(element.longitude),
         }));
-        console.log(formattedData);
+        // console.log(formattedData);
         return formattedData;
 
     } catch (error) {

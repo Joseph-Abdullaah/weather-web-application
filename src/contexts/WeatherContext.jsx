@@ -29,6 +29,78 @@ export const WeatherProvider = ({ children }) => {
     longitude: 13.405,
   });
 
+  // Geolocation states
+  const [geolocationRequested, setGeolocationRequested] = useState(false);
+  const [awaitingPermission, setAwaitingPermission] = useState(false);
+  const [permissionDenied, setPermissionDenied] = useState(false);
+
+  // Function to get user location
+  const getUserLocation = () => {
+    return new Promise((resolve, reject) => {
+      // Check if geolocation is supported
+      if (!navigator.geolocation) {
+        reject(new Error('Geolocation not supported'));
+        return;
+      }
+
+      setAwaitingPermission(true);
+      setGeolocationRequested(true);
+
+      navigator.geolocation.getCurrentPosition(
+        // Success callback
+        async (position) => {
+          setAwaitingPermission(false);
+          const { latitude, longitude } = position.coords;
+          
+          try {
+            // Reverse geocode to get city name
+            const locations = await apiSearch(latitude,longitude);
+            console.log(locations);
+            const locationName = locations[0]?.name || `Your Location`;
+            
+            resolve({
+              name: locationName,
+              latitude,
+              longitude
+            });
+          } catch (geocodeError) {
+            resolve({
+              name: 'Your Location',
+              latitude,
+              longitude
+            });
+          }
+        },
+        // Error callback
+        (error) => {
+          setAwaitingPermission(false);
+          setPermissionDenied(true);
+          
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              reject(new Error('Permission denied'));
+              break;
+            case error.POSITION_UNAVAILABLE:
+              reject(new Error('Position unavailable'));
+              break;
+            case error.TIMEOUT:
+              reject(new Error('Request timeout'));
+              break;
+            default:
+              reject(new Error('Unknown error'));
+          }
+        },
+        // Options
+        {
+          enableHighAccuracy: false,
+          timeout: 15000, // 15 second timeout
+          maximumAge: 300000 // 5 minutes
+        }
+      );
+    });
+  };
+
+
   // State for search functionality
   const [searchResults, setSearchResults] = useState([]);
   const [searching, setSearching] = useState(false);
@@ -100,10 +172,55 @@ export const WeatherProvider = ({ children }) => {
     getWeatherData(location.latitude, location.longitude, units);
   };
 
+  // Check if this is the first visit (no location stored in localStorage)
+  const [isFirstVisit, setIsFirstVisit] = useState(() => {
+    const savedLocation = localStorage.getItem("weatherLocation");
+    return !savedLocation;
+  });
+
   // Fetch weather when component mounts OR when units change
   useEffect(() => {
     getWeatherData(location.latitude, location.longitude, units);
   }, [units]); // Now refetches when units change!
+
+  // Auto-detect location on first visit
+  useEffect(() => {
+    if (isFirstVisit && !geolocationRequested) {
+      // Try to get user's location automatically on first visit
+      getUserLocation()
+        .then((userLocation) => {
+          // Save location to localStorage for future visits
+          localStorage.setItem("weatherLocation", JSON.stringify(userLocation));
+          setLocation(userLocation);
+          setIsFirstVisit(false);
+          // Fetch weather for user's location
+          getWeatherData(userLocation.latitude, userLocation.longitude, units);
+        })
+        .catch((error) => {
+          console.log("Geolocation failed:", error.message);
+          // If geolocation fails, keep default location (Berlin)
+          setIsFirstVisit(false);
+          // Reset geolocation states
+          setGeolocationRequested(false);
+          setAwaitingPermission(false);
+        });
+    }
+  }, [isFirstVisit, geolocationRequested]);
+
+  // Load saved location on subsequent visits
+  useEffect(() => {
+    if (!isFirstVisit) {
+      const savedLocation = localStorage.getItem("weatherLocation");
+      if (savedLocation) {
+        try {
+          const parsedLocation = JSON.parse(savedLocation);
+          setLocation(parsedLocation);
+        } catch (error) {
+          console.error("Failed to parse saved location:", error);
+        }
+      }
+    }
+  }, [isFirstVisit]);
 
   const value = {
     // State
@@ -113,6 +230,10 @@ export const WeatherProvider = ({ children }) => {
     location,
     searchResults,
     searching,
+    geolocationRequested,
+    awaitingPermission,
+    permissionDenied,
+    isFirstVisit,
 
     // Functions
     fetchWeatherData: getWeatherData,
@@ -120,6 +241,7 @@ export const WeatherProvider = ({ children }) => {
     setLocation: setNewLocation,
     updateUnitsAndRefetch, // New function
     retry,
+    getUserLocation, // Expose geolocation function
   };
 
   return (

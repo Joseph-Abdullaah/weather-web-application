@@ -5,10 +5,7 @@ import { formatDate, getWeatherIcon } from "./../../utils/helpers";
 function CurrentWeather() {
   const { weatherData, location } = useWeather();
   const { current } = weatherData;
-  console.log(weatherData);
-  // console.log(current.weather_code);
-  // console.log(current.is_day);
-  // console.log(weatherIcon);
+  
   return (
     <section className={styles.currentWeather}>
       <div className={styles.country}>
