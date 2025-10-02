@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import styles from "./HourlyForecast.module.css";
 import { useWeather } from "../../contexts/WeatherContext";
 import { formatTime } from "../../utils/helpers.js";
@@ -8,6 +8,26 @@ function HourlyForecast() {
   const { weatherData } = useWeather();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedDayIndex, setSelectedDayIndex] = useState(0);
+  const dropdownRef = useRef(null);
+
+  // Handle clicks outside the dropdown to close it
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    }
+
+    // Add event listener when dropdown is open
+    if (isDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    
+    // Clean up the event listener
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isDropdownOpen]);
 
   // Group hourly data by day
   const dailyHourlyForecasts = useMemo(() => {
@@ -46,7 +66,7 @@ function HourlyForecast() {
 
   return (
     <div className={styles.hourlyForecastContainer}>
-      <div className={styles.hourlyForecast}>
+      <div className={styles.hourlyForecast} ref={dropdownRef}>
         <h5 className={`${styles.hourlyForecastTitle} text-preset-5`}>
           Hourly forecast
         </h5>
