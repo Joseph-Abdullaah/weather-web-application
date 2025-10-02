@@ -19,6 +19,7 @@
 
 .dailyForecast {
   display: flex;
+  max-height: 165px;
   flex-direction: column;
   gap: var(--spacing-200);
   align-items: center;

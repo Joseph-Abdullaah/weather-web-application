@@ -35,7 +35,7 @@ function LoadingSkeleton() {
         <div className={styles.hourlyForecastContainerSkeleton}>
           <div className={styles.hourlyForecastHeader}>
             <p className={`${styles.hourlyForecastTitle} text-preset-5`}>
-              Hourly Forecast
+              Hourly forecast
             </p>
             <button className={`${styles.skeletonButton} text-preset-7`}>
               -
