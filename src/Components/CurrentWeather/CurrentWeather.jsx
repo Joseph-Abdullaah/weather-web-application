@@ -10,7 +10,7 @@ function CurrentWeather() {
     <section className={styles.currentWeather}>
       <div className={styles.country}>
         <h4 className={`${styles.countryName} text-preset-4`}>
-          {location.name}
+          {location.name}, {location.country}
         </h4>
         <p className={`${styles.countryDate} text-preset-6`}>
           {formatDate(new Date())}

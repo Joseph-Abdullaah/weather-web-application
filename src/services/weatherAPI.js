@@ -60,6 +60,7 @@ export async function searchLocations(query) {
         console.log(data);
         const formattedData = data.results.map(element => ({
             name: element.name,
+            country: element.country,
             latitude: parseFloat(element.latitude),
             longitude: parseFloat(element.longitude),
         }));
