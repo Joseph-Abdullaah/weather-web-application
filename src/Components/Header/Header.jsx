@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useUnit } from "../../contexts/UnitContext";
 import styles from "./Header.module.css";
 
@@ -7,6 +6,26 @@ import styles from "./Header.module.css";
 function Header() {
   const { units, toggleBulkUnits, updateUnit } = useUnit();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Handle clicks outside the dropdown to close it
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    }
+
+    // Add event listener when dropdown is open
+    if (isDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    
+    // Clean up the event listener
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isDropdownOpen]);
 
   // Determine bulk toggle state and text
   const isImperial = units.temperature === "fahrenheit";
@@ -51,7 +70,7 @@ function Header() {
   };
 
   return (
-    <div className={styles.headerContainer}>
+    <div className={styles.headerContainer} ref={dropdownRef}>
       <img
         className={styles.logo}
         src="./src/assets/images/logo.svg"
