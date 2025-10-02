@@ -17,7 +17,7 @@ function SearchBar() {
     awaitingPermission 
   } = useWeather();
   // Debounce the query to avoid too many API calls
-  const debouncedQuery = useDebounce(query, 300);
+  const debouncedQuery = useDebounce(query, 150);
 
   // This handles the "search in progress" state automatically
   useEffect(() => {
@@ -38,10 +38,10 @@ function SearchBar() {
     const q = query.trim();
     if (!q) return;
 
-    const result = await searchLocations(q);
+    await searchLocations(q);
 
-    if (result && result.length > 0) {
-      setLocation(result[0]);
+    if (searchResults && searchResults.length > 0) {
+      setLocation(searchResults[0]);
       setQuery("");
       setShowDropdown(false);
     } else {
@@ -80,9 +80,9 @@ function SearchBar() {
   };
 
   return (
-    <form className={styles.searchContainer}>
+    <form onSubmit={handleSearch} className={styles.searchContainer}>
       <div className={styles.searchContainerAndLocationContainer}>
-        <div onSubmit={handleSearch} className={styles.search}>
+        <div className={styles.search}>
           <img
             className={styles.searchIcon}
             src="./src/assets/images/icon-search.svg"
