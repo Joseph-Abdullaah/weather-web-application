@@ -41,7 +41,7 @@ function LoadingSkeleton() {
               -
               <img
                 className={styles.dropdownIcon}
-                src="/src/assets/images/icon-dropdown.svg"
+                src="/public/images/icon-dropdown.svg"
                 alt="dropdown"
               />
             </button>

@@ -73,7 +73,7 @@ function Header() {
     <div className={styles.headerContainer} ref={dropdownRef}>
       <img
         className={styles.logo}
-        src="./src/assets/images/logo.svg"
+        src="/public/images/logo.svg"
         alt="logo"
       />
       <button
@@ -82,14 +82,14 @@ function Header() {
       >
         <img
           className={styles.unitIcon}
-          src="./src/assets/images/icon-units.svg"
+          src="/public/images/icon-units.svg"
           alt="units"
         />
         Units
         <img
           className={styles.dropdownIcon}
           style={{ transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease-in-out' }}
-          src="./src/assets/images/icon-dropdown.svg"
+          src="/public/images/icon-dropdown.svg"
           alt="dropdown"
         />
       </button>
@@ -111,7 +111,7 @@ function Header() {
             >
               <span>Celsius (°C)</span>
               {isTemperatureSelected("Celsius (°C)") && (
-                <img src="/src/assets/images/icon-checkmark.svg" alt="check" />
+                <img src="/public/images/icon-checkmark.svg" alt="check" />
               )}
             </button>
             <button
@@ -120,7 +120,7 @@ function Header() {
             >
               <span>Fahrenheit (°F)</span>
               {isTemperatureSelected("Fahrenheit (°F)") && (
-                <img src="/src/assets/images/icon-checkmark.svg" alt="check" />
+                <img src="/public/images/icon-checkmark.svg" alt="check" />
               )}
             </button>
           </div>
@@ -135,7 +135,7 @@ function Header() {
             >
               <span>km/h</span>
               {isWindSpeedSelected("km/h") && (
-                <img src="/src/assets/images/icon-checkmark.svg" alt="check" />
+                <img src="/public/images/icon-checkmark.svg" alt="check" />
               )}
             </button>
             <button
@@ -144,7 +144,7 @@ function Header() {
             >
               <span>mph</span>
               {isWindSpeedSelected("mph") && (
-                <img src="/src/assets/images/icon-checkmark.svg" alt="check" />
+                <img src="/public/images/icon-checkmark.svg" alt="check" />
               )}
             </button>
           </div>
@@ -159,7 +159,7 @@ function Header() {
             >
               <span>Millimeters (mm)</span>
               {isPrecipitationSelected("Millimeters (mm)") && (
-                <img src="/src/assets/images/icon-checkmark.svg" alt="check" />
+                <img src="/public/images/icon-checkmark.svg" alt="check" />
               )}
             </button>
             <button
@@ -168,7 +168,7 @@ function Header() {
             >
               <span>Inches (in)</span>
               {isPrecipitationSelected("Inches (in)") && (
-                <img src="/src/assets/images/icon-checkmark.svg" alt="check" />
+                <img src="/public/images/icon-checkmark.svg" alt="check" />
               )}
             </button>
           </div>

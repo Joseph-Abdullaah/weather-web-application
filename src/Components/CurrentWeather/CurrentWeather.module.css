@@ -3,7 +3,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-image: url("/src/assets/images/bg-today-large.svg");
+  background-image: url("/public/images/bg-today-large.svg");
   background-size: cover;
   background-repeat: no-repeat;
   padding: var(--spacing-1000) var(--spacing-300);
@@ -75,6 +75,6 @@
   .currentWeather {
     flex-direction: column;
     align-items: center;
-    background-image: url("/src/assets/images/bg-today-small.svg");
+    background-image: url("/public/images/bg-today-small.svg");
   }
 }

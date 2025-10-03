@@ -81,7 +81,7 @@ function HourlyForecast() {
           <img
             className={styles.dropdownIcon}
             style={{transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease-in-out' }}
-            src="/src/assets/images/icon-dropdown.svg"
+            src="/public/images/icon-dropdown.svg"
             alt="dropdown-icon"
           />
         </button>
