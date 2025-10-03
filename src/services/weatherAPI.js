@@ -57,6 +57,7 @@ export async function searchLocations(query) {
 
         // Parse the JSON response
         const data = await response.json();
+        console.log(data);
         const formattedData = data.results.map(element => ({
             name: element.name,
             country: element.country,
@@ -89,7 +90,7 @@ export async function reverseGeocode(latitude, longitude) {
         }
 
         const data = await response.json();
-
+        console.log("Reverse geocode result:", data);
 
         // Extract city and country
         const address = data.address || {};
