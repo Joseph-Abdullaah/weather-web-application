@@ -84,7 +84,7 @@ function SearchBar() {
         <div className={styles.search}>
           <img
             className={styles.searchIcon}
-            src="/public/images/icon-search.svg"
+            src="/images/icon-search.svg"
             alt="search-icon"
           />
           <input
@@ -103,7 +103,7 @@ function SearchBar() {
             <div className={styles.searchInprogressContainer}>
               <img
                 className={styles.loadingIcon}
-                src="/public/images/icon-loading.svg"
+                src="/images/icon-loading.svg"
                 alt="loading"
               />
               <p className={`${styles.searchInprogress} text-preset-7`}>
@@ -116,7 +116,7 @@ function SearchBar() {
             <div className={styles.searchInprogressContainer}>
               <img
                 className={styles.loadingIcon}
-                src="/public/images/icon-loading.svg"
+                src="/images/icon-loading.svg"
                 alt="loading"
               />
               <p className={`${styles.searchInprogress} text-preset-7`}>
