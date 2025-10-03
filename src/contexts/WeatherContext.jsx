@@ -4,6 +4,7 @@ import { useUnit } from "./UnitContext"; // Import the unit hook
 import {
   fetchWeatherData,
   searchLocations as apiSearch,
+  reverseGeocode,
 } from "../services/weatherAPI";
 
 const WeatherContext = createContext();
@@ -24,7 +25,8 @@ export const WeatherProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [location, setLocation] = useState({
-    name: "Berlin, Germany",
+    name: "Berlin",
+    country: "Germany",
     latitude: 52.52,
     longitude: 13.405,
   });
@@ -51,19 +53,20 @@ export const WeatherProvider = ({ children }) => {
         async (position) => {
           setAwaitingPermission(false);
           const { latitude, longitude } = position.coords;
-          
+
           try {
             // Reverse geocode to get city name
-            const locations = await apiSearch(latitude,longitude);
-            console.log(locations);
-            const locationName = locations[0]?.name || `Your Location`;
-            
+            const locationData = await reverseGeocode(latitude, longitude);
+            console.log(locationData);
+
             resolve({
-              name: locationName,
-              latitude,
-              longitude
+              name: locationData.name,
+              country: locationData.country,
+              latitude: locationData.latitude,
+              longitude: locationData.longitude
             });
           } catch (geocodeError) {
+            console.log("Reverse geocoding failed:", geocodeError.message);
             resolve({
               name: 'Your Location',
               latitude,

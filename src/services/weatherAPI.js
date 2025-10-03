@@ -57,7 +57,6 @@ export async function searchLocations(query) {
 
         // Parse the JSON response
         const data = await response.json();
-        console.log(data);
         const formattedData = data.results.map(element => ({
             name: element.name,
             country: element.country,
@@ -69,6 +68,43 @@ export async function searchLocations(query) {
 
     } catch (error) {
         throw new Error(`Failed to search locations: ${error.message}`);
+    }
+};
+
+export async function reverseGeocode(latitude, longitude) {
+    try {
+        const baseUrl = "https://nominatim.openstreetmap.org/reverse?";
+        const params = new URLSearchParams({
+            format: "json",
+            lat: latitude.toString(),
+            lon: longitude.toString(),
+            zoom: "10",
+            addressdetails: "1",
+        });
+
+        const url = `${baseUrl}${params.toString()}`;
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Reverse geocoding API error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+
+        // Extract city and country
+        const address = data.address || {};
+        const city = address.city || address.town || address.village || address.hamlet || data.display_name.split(',')[0];
+        const country = address.country || "";
+
+        return {
+            name: city,
+            country: country,
+            latitude: parseFloat(data.lat),
+            longitude: parseFloat(data.lon),
+        };
+
+    } catch (error) {
+        throw new Error(`Failed to reverse geocode: ${error.message}`);
     }
 };
 
