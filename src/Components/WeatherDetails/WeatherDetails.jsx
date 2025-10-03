@@ -15,10 +15,10 @@ function WeatherDetails() {
   } = weatherData.current;
   // const
   const metrics = [
-    { label: "Feels like", value: `${apparent_temperature}°` },
-    { label: "Humidity", value: `${relative_humidity_2m}%` },
-    { label: "Wind", value: `${wind_speed_10m} ${windUnit}` },
-    { label: "Precipitation", value: `${precipitation} ${precipUnit}` },
+    { label: "Feels like", value: `${Math.round(apparent_temperature)}°` },
+    { label: "Humidity", value: `${Math.round(relative_humidity_2m)}%` },
+    { label: "Wind", value: `${Math.round(wind_speed_10m)} ${windUnit}` },
+    { label: "Precipitation", value: `${Math.round(precipitation)} ${precipUnit}` },
   ];
   return (
     <div className={styles.weatherDetailsContainer}>
