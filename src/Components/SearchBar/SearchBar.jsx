@@ -7,14 +7,13 @@ import { useWeather } from "../../contexts/WeatherContext";
 function SearchBar() {
   const [query, setQuery] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
-  const { 
-    searchLocations, 
-    searchResults, 
-    searching, 
-    setLocation, 
-    loading, 
-    getUserLocation, 
-    awaitingPermission 
+  const {
+    searchLocations,
+    searchResults,
+    setLocation,
+    loading,
+    getUserLocation,
+    awaitingPermission
   } = useWeather();
   // Debounce the query to avoid too many API calls
   const debouncedQuery = useDebounce(query, 200);

@@ -73,5 +73,5 @@ export const getWeatherIcon = (weatherCode) => {
   };
 
   const iconName = weatherMap[weatherCode] || "sunny"; // Default to sunny if code is unknown
-  return `/public/images/${iconName}.webp`;
+  return `/images/${iconName}.webp`;
 };

@@ -9,7 +9,7 @@ function ErrorMessage() {
     <div className={styles.errorMessageContainer}>
       <img
         className={styles.errorIcon}
-        src="/public/images/icon-error.svg"
+        src="/images/icon-error.svg"
         alt="errorIcon"
       />
       <h2 className={`${styles.errorTitle} text-preset-2`}>
@@ -22,7 +22,7 @@ function ErrorMessage() {
       <button onClick={retry} className={`${styles.errorButton} text-preset-7`}>
         <img
           className={styles.retryIcon}
-          src="/public/images/icon-retry.svg"
+          src="/images/icon-retry.svg"
           alt="retryIcon"
         />
         Retry
