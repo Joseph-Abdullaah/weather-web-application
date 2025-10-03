@@ -134,7 +134,7 @@ function SearchBar() {
                     className={`${styles.searchResultItem} text-preset-7`}
                     onMouseDown={() => handleLocationSelect(location)}
                   >
-                    {location.name}
+                    {location.name}, {location.country}
                   </li>
                 ))}
             </ul>

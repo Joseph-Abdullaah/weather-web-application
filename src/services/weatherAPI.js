@@ -57,7 +57,7 @@ export async function searchLocations(query) {
 
         // Parse the JSON response
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         const formattedData = data.results.map(element => ({
             name: element.name,
             country: element.country,
