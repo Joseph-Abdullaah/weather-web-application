@@ -17,7 +17,7 @@ function SearchBar() {
     awaitingPermission 
   } = useWeather();
   // Debounce the query to avoid too many API calls
-  const debouncedQuery = useDebounce(query, 150);
+  const debouncedQuery = useDebounce(query, 200);
 
   // This handles the "search in progress" state automatically
   useEffect(() => {
