@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./LoadingSkeleton.module.css";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 function LoadingSkeleton() {
+  const detailTitles = ["Feels like", "Humidity", "Wind", "Precipitation"];
+
   return (
     <div className={styles.loadingSkeletonContainer}>
       <div className={styles.skeletonGroup1}>
@@ -10,10 +12,10 @@ function LoadingSkeleton() {
             <LoadingSpinner />
           </section>
           <div className={styles.weatherDetailsContainer}>
-            {[...Array(4)].map((_, i) => (
-              <div key={i} className={styles.weatherDetailSkeleton}>
+            {detailTitles.map((title, index) => (
+              <div key={index} className={styles.weatherDetailSkeleton}>
                 <p className={`${styles.detailsTitle} text-preset-6`}>
-                  Feels Like
+                  {title}
                 </p>
                 <h3 className={`${styles.detailsValue} text-preset-3`}>¯</h3>
               </div>
